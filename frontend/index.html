@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f5f7fb">
+    <title>Sign in | NetGuardian</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/app.js"></script>
+</head>
+<body class="auth-page" data-page="login">
+    <main class="auth-card">
+        <a class="brand brand-centered" href="index.html"><span class="brand-mark">N</span> NetGuardian</a>
+        <p class="eyebrow">PARENT CONTROL CENTER</p>
+        <h1 id="authTitle">Welcome back</h1>
+        <p class="muted" id="authDescription">Sign in to manage your family’s connected experience.</p>
+        <div id="appMessage" class="notice" role="status" aria-live="polite" hidden></div>
+        <form id="authForm" class="stack">
+            <label>Email address
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+            </label>
+            <label>Password
+                <input id="password" name="password" type="password" autocomplete="current-password" minlength="8" placeholder="At least 8 characters" required>
+            </label>
+            <button class="button button-primary" type="submit" id="authSubmit">Sign in</button>
+        </form>
+        <p class="auth-switch"><span id="authSwitchText">New to NetGuardian?</span>
+            <button class="text-button" type="button" id="authToggle">Create an account</button>
+        </p>
+        <p class="fine-print">Prototype app · Hub and ESP32 are simulated</p>
+    </main>
+</body>
+</html>

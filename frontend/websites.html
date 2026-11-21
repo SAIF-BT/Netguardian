@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website rules | NetGuardian</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/app.js"></script>
+</head>
+<body data-page="rules">
+    <header class="topbar">
+        <a class="brand" href="dashboard.html"><span class="brand-mark">N</span> NetGuardian</a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="dashboard.html">Overview</a><a href="devices.html">Devices</a>
+            <a class="active" href="websites.html">Website rules</a><a href="schedules.html">Schedules</a><a href="alerts.html">Activity</a>
+        </nav>
+        <button class="text-button" type="button" data-logout>Sign out</button>
+    </header>
+    <main class="page-shell">
+        <div id="appMessage" class="notice" role="status" aria-live="polite" hidden></div>
+        <section class="page-heading"><div><p class="eyebrow">CONTENT SETTINGS</p><h1>Website rules</h1><p class="muted">Configure domain rules applied by the NetGuardian Hub.</p></div></section>
+        <section class="panel">
+            <div class="section-heading"><div><h2>Add a rule</h2><p class="muted">Rules are applied when DNS requests pass through the connected Hub.</p></div></div>
+            <form id="ruleForm" class="form-grid">
+                <label>Domain<input name="domain" required maxlength="253" placeholder="example.com"></label>
+                <label>Action<select name="action"><option value="block">Block</option><option value="allow">Allow</option></select></label>
+                <label>Category<select name="category"><option value="education">Education</option><option value="gaming">Gaming</option><option value="social media">Social media</option><option value="streaming">Streaming</option><option value="other">Other</option></select></label>
+                <label>Apply to<select name="device_id" id="ruleDevice"><option value="">All devices</option></select></label>
+                <label class="form-wide">Mode <span class="muted">(optional)</span><select name="mode"><option value="">Every mode</option><option value="normal">Normal</option><option value="study">Study</option><option value="entertainment">Entertainment</option><option value="bedtime">Bedtime</option></select></label>
+                <div class="form-wide"><button class="button button-primary" type="submit">Save rule</button></div>
+            </form>
+        </section>
+        <section class="panel">
+            <div class="section-heading"><div><h2>Saved rules</h2><p class="muted">The Hub synchronizes rules from the backend automatically.</p></div></div>
+            <div id="ruleList" class="record-list"><p class="muted">Loading rules…</p></div>
+        </section>
+    </main>
+</body>
+</html>

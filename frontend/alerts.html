@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity | NetGuardian</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/app.js"></script>
+</head>
+<body data-page="activity">
+    <header class="topbar">
+        <a class="brand" href="dashboard.html"><span class="brand-mark">N</span> NetGuardian</a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="dashboard.html">Overview</a><a href="devices.html">Devices</a>
+            <a href="websites.html">Website rules</a><a href="schedules.html">Schedules</a><a class="active" href="alerts.html">Activity</a>
+        </nav>
+        <button class="text-button" type="button" data-logout>Sign out</button>
+    </header>
+    <main class="page-shell">
+        <div id="appMessage" class="notice" role="status" aria-live="polite" hidden></div>
+        <section class="page-heading"><div><p class="eyebrow">MONITORING</p><h1>Activity & status</h1><p class="muted">Hub DNS activity, access requests, and hardware status.</p></div></section>
+        <section class="panel">
+            <div class="section-heading"><div><h2>Hub & security module</h2><p class="muted">Live status is reported by the Hub and ESP32. Optional simulator controls are for testing only.</p></div></div>
+            <div class="status-grid">
+                <article class="status-card"><span class="status-dot" id="hubDot"></span><div><strong>NetGuardian Hub</strong><p id="hubStatus" class="muted">Loading…</p></div></article>
+                <article class="status-card"><span class="status-dot" id="espDot"></span><div><strong>ESP32 security module</strong><p id="espStatus" class="muted">Loading…</p></div></article>
+            </div>
+            <div class="control-row">
+                <button class="button button-secondary" type="button" id="simulateOnline">Simulate online</button>
+                <button class="button button-secondary" type="button" id="simulateOffline">Simulate offline</button>
+                <button class="button button-danger" type="button" id="simulateTamper">Simulate enclosure opened</button>
+                <button class="button button-secondary" type="button" id="simulateSecure">Clear tamper demo</button>
+            </div>
+        </section>
+        <section class="panel">
+            <div class="section-heading"><div><h2>Blocked-attempt alert</h2><p class="muted">Create a notification after repeated simulated blocked events.</p></div></div>
+            <form id="settingsForm" class="inline-form"><label>Alert after <input type="number" name="blocked_attempt_threshold" min="2" max="100" required> blocked attempts</label><button class="button button-secondary" type="submit">Save threshold</button></form>
+            <form id="activityForm" class="form-grid demo-form">
+                <label>Domain<input name="domain" required placeholder="example.com"></label>
+                <label>Category<select name="category"><option value="education">Education</option><option value="gaming">Gaming</option><option value="social media">Social media</option><option value="streaming">Streaming</option><option value="other">Other</option></select></label>
+                <label>Result<select name="decision"><option value="blocked">Blocked</option><option value="allowed">Allowed</option></select></label>
+                <div class="form-wide"><button class="button button-primary" type="submit">Add demo event</button></div>
+            </form>
+        </section>
+        <section class="panel">
+            <div class="section-heading">
+                <div><h2>Access requests</h2><p class="muted">Requests from registered devices appear here. Temporary approvals are applied by the Hub after its next sync.</p></div>
+                <a class="button button-secondary" href="request.html" target="_blank" rel="noopener">Open child request page</a>
+            </div>
+            <div id="requestList" class="record-list"><p class="muted">Loading requests…</p></div>
+        </section>
+        <section class="panel">
+            <div class="section-heading"><div><h2>Event history</h2><p class="muted">DNS decisions, access requests, and hardware events.</p></div></div>
+            <div id="activityList" class="activity-list"><p class="muted">Loading activity…</p></div>
+        </section>
+    </main>
+</body>
+</html>

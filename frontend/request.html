@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request access | NetGuardian</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/app.js"></script>
+</head>
+<body class="auth-page" data-page="child-request">
+    <main class="auth-card">
+        <a class="brand brand-centered" href="index.html"><span class="brand-mark">N</span> NetGuardian</a>
+        <p class="eyebrow">PARENT ACCESS REQUEST</p>
+        <h1>Request a website</h1>
+        <p class="muted">Send your parent a request to allow a website. Your device must be registered with NetGuardian.</p>
+        <div id="appMessage" class="notice" role="status" aria-live="polite" hidden></div>
+        <form id="childRequestForm" class="stack">
+            <label>Website domain
+                <input name="domain" type="text" maxlength="253" placeholder="example.com" required>
+            </label>
+            <label>Why do you need access?
+                <input name="reason" type="text" maxlength="500" placeholder="For example, a school assignment">
+            </label>
+            <button class="button button-primary" type="submit">Send request</button>
+        </form>
+        <p class="fine-print">This request is associated with the registered device using its network address. Submitting it does not unblock the website.</p>
+    </main>
+</body>
+</html>

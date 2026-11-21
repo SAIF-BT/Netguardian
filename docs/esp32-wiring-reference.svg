@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="760" viewBox="0 0 1120 760" role="img" aria-labelledby="title description">
+  <title id="title">ESP32 DevKit V1 wiring reference without OLED</title>
+  <desc id="description">Starting pin reference for three LEDs and a reed switch. The buzzer is intentionally left disconnected until its voltage and current are checked.</desc>
+  <rect width="1120" height="760" fill="#f3f6fb"/>
+  <rect x="28" y="28" width="1064" height="704" rx="22" fill="#ffffff" stroke="#dce4ef" stroke-width="2"/>
+
+  <text x="64" y="82" fill="#172436" font-family="Arial, sans-serif" font-size="29" font-weight="700">ESP32 DevKit V1 — wiring reference</text>
+  <text x="64" y="112" fill="#607086" font-family="Arial, sans-serif" font-size="16">OLED omitted for this version · Connection map only, not to scale</text>
+
+  <rect x="64" y="138" width="992" height="48" rx="10" fill="#fff4dd"/>
+  <text x="84" y="169" fill="#80570c" font-family="Arial, sans-serif" font-size="17" font-weight="700">Disconnect the USB cable before wiring. ESP32 GPIO pins are 3.3V logic; never connect 5V to a GPIO.</text>
+
+  <text x="76" y="230" fill="#315fe8" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1.5">LED INDICATORS</text>
+
+  <g font-family="Arial, sans-serif" font-size="17" fill="#172436">
+    <rect x="72" y="250" width="674" height="66" rx="10" fill="#f8faff" stroke="#e1e8f2"/>
+    <rect x="88" y="267" width="108" height="32" rx="7" fill="#eaf0ff"/>
+    <text x="102" y="289" fill="#3151b5" font-weight="700">GPIO25</text>
+    <line x1="196" y1="283" x2="243" y2="283" stroke="#315fe8" stroke-width="3"/>
+    <rect x="243" y="270" width="96" height="26" rx="3" fill="#fff" stroke="#8292a8" stroke-width="2"/>
+    <text x="250" y="289" fill="#536176" font-size="13">220–330Ω</text>
+    <line x1="339" y1="283" x2="385" y2="283" stroke="#315fe8" stroke-width="3"/>
+    <circle cx="406" cy="283" r="15" fill="#ef6666" stroke="#a23b3b" stroke-width="2"/>
+    <text x="436" y="278" font-weight="700">Red LED</text>
+    <text x="436" y="299" fill="#607086" font-size="13">long leg (+) toward resistor; short leg to GND</text>
+
+    <rect x="72" y="326" width="674" height="66" rx="10" fill="#f8faff" stroke="#e1e8f2"/>
+    <rect x="88" y="343" width="108" height="32" rx="7" fill="#eaf0ff"/>
+    <text x="102" y="365" fill="#3151b5" font-weight="700">GPIO26</text>
+    <line x1="196" y1="359" x2="243" y2="359" stroke="#315fe8" stroke-width="3"/>
+    <rect x="243" y="346" width="96" height="26" rx="3" fill="#fff" stroke="#8292a8" stroke-width="2"/>
+    <text x="250" y="365" fill="#536176" font-size="13">220–330Ω</text>
+    <line x1="339" y1="359" x2="385" y2="359" stroke="#315fe8" stroke-width="3"/>
+    <circle cx="406" cy="359" r="15" fill="#f0c64c" stroke="#a27e1b" stroke-width="2"/>
+    <text x="436" y="354" font-weight="700">Yellow LED</text>
+    <text x="436" y="375" fill="#607086" font-size="13">long leg (+) toward resistor; short leg to GND</text>
+
+    <rect x="72" y="402" width="674" height="66" rx="10" fill="#f8faff" stroke="#e1e8f2"/>
+    <rect x="88" y="419" width="108" height="32" rx="7" fill="#eaf0ff"/>
+    <text x="102" y="441" fill="#3151b5" font-weight="700">GPIO33</text>
+    <line x1="196" y1="435" x2="243" y2="435" stroke="#315fe8" stroke-width="3"/>
+    <rect x="243" y="422" width="96" height="26" rx="3" fill="#fff" stroke="#8292a8" stroke-width="2"/>
+    <text x="250" y="441" fill="#536176" font-size="13">220–330Ω</text>
+    <line x1="339" y1="435" x2="385" y2="435" stroke="#315fe8" stroke-width="3"/>
+    <circle cx="406" cy="435" r="15" fill="#43b883" stroke="#24744f" stroke-width="2"/>
+    <text x="436" y="430" font-weight="700">Green LED</text>
+    <text x="436" y="451" fill="#607086" font-size="13">long leg (+) toward resistor; short leg to GND</text>
+  </g>
+
+  <rect x="72" y="495" width="674" height="110" rx="12" fill="#f3fbf7" stroke="#cfe9dc"/>
+  <text x="94" y="525" fill="#16704f" font-family="Arial, sans-serif" font-size="14" font-weight="700" letter-spacing="1.2">REED SWITCH</text>
+  <rect x="94" y="545" width="108" height="34" rx="7" fill="#e5f4ed"/>
+  <text x="109" y="568" fill="#16704f" font-family="Arial, sans-serif" font-size="16" font-weight="700">GPIO27</text>
+  <line x1="202" y1="562" x2="304" y2="562" stroke="#16835d" stroke-width="3"/>
+  <rect x="304" y="542" width="170" height="40" rx="8" fill="#ffffff" stroke="#76b896" stroke-width="2"/>
+  <text x="327" y="568" fill="#315b48" font-family="Arial, sans-serif" font-size="16" font-weight="700">Reed switch</text>
+  <line x1="474" y1="562" x2="576" y2="562" stroke="#16835d" stroke-width="3"/>
+  <rect x="576" y="545" width="108" height="34" rx="7" fill="#edf1f6"/>
+  <text x="606" y="568" fill="#536176" font-family="Arial, sans-serif" font-size="16" font-weight="700">GND</text>
+  <text x="94" y="630" fill="#607086" font-family="Arial, sans-serif" font-size="14">The two switch wires have no polarity. Firmware will use INPUT_PULLUP.</text>
+
+  <rect x="72" y="648" width="674" height="52" rx="10" fill="#f4f6fa"/>
+  <text x="92" y="671" fill="#43536a" font-family="Arial, sans-serif" font-size="14" font-weight="700">Ground:</text>
+  <text x="157" y="671" fill="#607086" font-family="Arial, sans-serif" font-size="14">connect each LED short leg and one reed-switch wire to an ESP32 GND pin.</text>
+  <text x="92" y="690" fill="#607086" font-family="Arial, sans-serif" font-size="13">Use one resistor per LED. Check LED polarity before connecting USB power.</text>
+
+  <rect x="778" y="218" width="246" height="210" rx="15" fill="#25364d"/>
+  <text x="901" y="253" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="19" font-weight="700">ESP32 DevKit V1</text>
+  <text x="901" y="276" text-anchor="middle" fill="#bdc9d9" font-family="Arial, sans-serif" font-size="13">Pin labels shown for reference</text>
+  <line x1="800" y1="300" x2="1002" y2="300" stroke="#455a75" stroke-width="1"/>
+  <g fill="#e8eef7" font-family="Arial, sans-serif" font-size="15">
+    <text x="812" y="330">GPIO25</text>
+    <text x="812" y="357">GPIO26</text>
+    <text x="812" y="384">GPIO33</text>
+    <text x="812" y="411">GPIO27</text>
+  </g>
+  <g fill="#83a6ff">
+    <circle cx="990" cy="325" r="5"/>
+    <circle cx="990" cy="352" r="5"/>
+    <circle cx="990" cy="379" r="5"/>
+    <circle cx="990" cy="406" r="5"/>
+  </g>
+
+  <rect x="778" y="454" width="246" height="246" rx="15" fill="#fff7ed" stroke="#f1d5b2" stroke-width="2"/>
+  <text x="802" y="489" fill="#8c5517" font-family="Arial, sans-serif" font-size="16" font-weight="700">BUZZER — WAIT</text>
+  <text x="802" y="519" fill="#654b2c" font-family="Arial, sans-serif" font-size="14">
+    <tspan x="802" dy="0">Do not connect it yet.</tspan>
+    <tspan x="802" dy="23">Check its voltage/current and</tspan>
+    <tspan x="802" dy="23">whether it is a 2-wire buzzer</tspan>
+    <tspan x="802" dy="23">or a 3-pin module first.</tspan>
+    <tspan x="802" dy="31">Some need a transistor driver;</tspan>
+    <tspan x="802" dy="23">GPIO pins are not 5V tolerant.</tspan>
+  </text>
+  <text x="802" y="674" fill="#8c5517" font-family="Arial, sans-serif" font-size="13" font-weight="700">OLED is not used in this diagram.</text>
+</svg>

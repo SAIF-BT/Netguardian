@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | NetGuardian</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/app.js"></script>
+</head>
+<body data-page="dashboard">
+    <header class="topbar">
+        <a class="brand" href="dashboard.html"><span class="brand-mark">N</span> NetGuardian</a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a class="active" href="dashboard.html">Overview</a>
+            <a href="devices.html">Devices</a>
+            <a href="websites.html">Website rules</a>
+            <a href="schedules.html">Schedules</a>
+            <a href="alerts.html">Activity</a>
+        </nav>
+        <button class="text-button" type="button" data-logout>Sign out</button>
+    </header>
+    <main class="page-shell">
+        <div id="appMessage" class="notice" role="status" aria-live="polite" hidden></div>
+        <section class="page-heading">
+            <div><p class="eyebrow">YOUR HOME AT A GLANCE</p><h1>Overview</h1><p class="muted">A simple view of your devices, rules, and recent activity.</p></div>
+            <a class="button button-primary" href="devices.html">Add a device</a>
+        </section>
+        <section class="stat-grid" aria-label="Summary">
+            <article class="stat-card"><span class="stat-label">Registered devices</span><strong id="deviceCount">—</strong><a href="devices.html">Manage devices <span aria-hidden="true">→</span></a></article>
+            <article class="stat-card"><span class="stat-label">Allowed events</span><strong id="allowedCount">—</strong><span class="stat-note">Live Hub and demo events</span></article>
+            <article class="stat-card"><span class="stat-label">Blocked events</span><strong id="blockedCount">—</strong><span class="stat-note">Live Hub and demo events</span></article>
+        </section>
+        <section class="panel">
+            <div class="section-heading"><div><p class="eyebrow">CONTROL MODE</p><h2>Protection mode</h2></div></div>
+            <p class="muted">The Hub applies this mode to DNS requests from registered devices configured to use it.</p>
+            <div class="mode-picker" id="modePicker" role="group" aria-label="Protection mode"></div>
+        </section>
+        <section class="panel">
+            <div class="section-heading"><div><p class="eyebrow">CONNECTIONS</p><h2>System status</h2></div><a href="alerts.html">View activity →</a></div>
+            <div class="status-grid">
+                <article class="status-card"><span class="status-dot" id="hubDot"></span><div><strong>NetGuardian Hub</strong><p id="hubStatus" class="muted">Loading…</p></div></article>
+                <article class="status-card"><span class="status-dot" id="espDot"></span><div><strong>ESP32 security module</strong><p id="espStatus" class="muted">Loading…</p></div></article>
+            </div>
+            <p class="fine-print">Hub status comes from its heartbeat. ESP32 status requires a connected device; demo controls are on the Activity page.</p>
+        </section>
+        <section class="panel">
+            <div class="section-heading"><div><p class="eyebrow">LATEST</p><h2>Recent activity</h2></div><a href="alerts.html">See all →</a></div>
+            <div id="recentActivity" class="activity-list"><p class="muted">Loading activity…</p></div>
+        </section>
+    </main>
+</body>
+</html>
